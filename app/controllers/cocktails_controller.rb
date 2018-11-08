@@ -3,6 +3,8 @@ class CocktailsController < ApplicationController
 
   def index
     @cocktails = Cocktail.all
+
+    # To find the dose in the cocktail
   end
 
   def show

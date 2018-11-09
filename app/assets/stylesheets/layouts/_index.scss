@@ -3,3 +3,31 @@
 // @import "dashboard";
 // @import "profile";
 // @import "map";
+
+body {
+  background: black;
+  color: white;
+}
+
+.my-card {
+  background-image: asset-url('cocktail1.jpeg');
+  background-size: cover;
+  height: 400px;
+  margin: 20px;
+  border: 1px solid pink;
+  position: relative;
+  padding: 10px;
+}
+
+.card-btns {
+  position: absolute;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.my-button {
+  background: pink;
+  border-radius: 10%;
+  color: white;
+}

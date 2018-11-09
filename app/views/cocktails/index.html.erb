@@ -1,24 +1,21 @@
-<h1>All of the Cocktails</h1>
+<h1 class="text-center"><span id="banner-typed-text"></span></h1>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Ingredients</th>
-      <th>Dose</th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="container">
     <% @cocktails.each do |cocktail| %>
       <tr>
-        <td><%= cocktail.name %></td>
-        <td><%=  link_to 'Show', cocktail, class: "btn btn-primary"%></td>
-        <td><%=  link_to 'Edit', edit_cocktail_path(cocktail), class: "btn btn-primary"%></td>
-        <td><%=  link_to 'Destroy', cocktail, method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-danger"%></td>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card my-card">
+            <%= cocktail.name %>
+            <<div class="card-btns">
+              <%=  link_to 'Show', cocktail, class: "btn my-button"%>
+              <%=  link_to 'Edit', edit_cocktail_path(cocktail), class: "btn my-button"%>
+              <%=  link_to 'Destroy', cocktail, method: :delete, data: {confirm: 'Are you sure?'}, class: "btn my-button"%>
+            </div>
+          </div>
+        </div>
       </tr>
     <% end %>
   </tbody>
-</table>
+</div>
 
 <%= link_to "New Cocktail", new_cocktail_path, class: "btn btn-primary" %>

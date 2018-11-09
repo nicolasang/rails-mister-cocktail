@@ -1,11 +1,22 @@
 <h1>Cocktail: <%= @cocktail.name %></h1>
 
-<h3>Name</h3>
-<p><%= @cocktail.name %></p>
+<h3>Name: <%= @cocktail.name %></h3>
+
 <% @cocktail.doses.each do |dose| %>
-  <%= dose.ingredient.name %>
-  <p>Dose: <%= dose.description %></p>
-  <p>Amount: <%= dose.amount %>0 ml</p>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-4">
+        <div class="card">
+          Ingredient: <%= dose.ingredient.name %>; Amount: <%= dose.amount %>0 ml
+          <%=  link_to 'Edit', edit_dose_path(dose), class: "my-button" %>
+          <%=  link_to 'Delete', dose, method: :delete, data: {confirm: 'Are you sure?'}, class: "my-button" %>
+        </div>
+      </div>
+    </div>
+  </div>
 <% end %>
 
+<p></p>
+<%= link_to "create new dose", new_cocktail_dose_path(@cocktail), class: "btn btn-success"%>
+<p></p>
 <%= link_to "Back", cocktails_path %>
